@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\VoitureRepository;
+use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: VoitureRepository::class)]
@@ -22,7 +23,7 @@ class Voiture
     #[ORM\Column(length: 255)]
     private ?string $motor_type = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT )]
     private ?string $description = null;
 
     #[ORM\Column]

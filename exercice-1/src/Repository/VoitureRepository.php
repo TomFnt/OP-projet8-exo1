@@ -36,6 +36,15 @@ class VoitureRepository extends ServiceEntityRepository
 //        ;
 //    }
 
+    public function getVoitureForCarrousel(): array
+    {
+        return $this->createQueryBuilder('v')
+
+            ->orderBy('v.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
 //    public function findOneBySomeField($value): ?Voiture
 //    {
 //        return $this->createQueryBuilder('v')

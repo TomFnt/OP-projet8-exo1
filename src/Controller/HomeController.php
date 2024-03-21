@@ -16,7 +16,6 @@ class HomeController extends AbstractController
 
         $voitures = $voitureRepository->findAll();
         return $this->render('accueil.html.twig', [
-            'controller_name' => 'HomeController',
             'voitures'=> $voitures,
         ]);
     }

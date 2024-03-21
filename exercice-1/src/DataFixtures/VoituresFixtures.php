@@ -19,7 +19,8 @@ class VoituresFixtures extends Fixture
         $voiture1->setPlaces('5');
         $voiture1->setIsManual(0);
         $voiture1->setDailyPrice(40);
-        $voiture1->setAnnualPrice(800);
+        $voiture1->setMensualPrice(800);
+
 
         $voiture2 = new Voiture();
         $voiture2->setName('Peugeot 106');
@@ -29,7 +30,8 @@ class VoituresFixtures extends Fixture
         $voiture2->setPlaces('4');
         $voiture2->setIsManual(1);
         $voiture2->setDailyPrice(10);
-        $voiture2->setAnnualPrice(200);
+        $voiture2->setMensualPrice(200);
+
 
         $manager->persist($voiture1);
         $manager->persist($voiture2);

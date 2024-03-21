@@ -2,10 +2,13 @@
 
 {% block titre %}{{ parent() }}-Accueil{% endblock%}
 {% block body %}
+    {{ dump(voitures)  }}
 <section id="fleet">
     <h2>Découvrez la flotte de véhicules chez Véhicloc</h2>
     <p>Que vous ayez besoin d'une petite citadine agile, d'une berline élégante ou même d'un SUV spacieux, nous avons une variété de véhicules  pour répondre à vos exigences.</p>
     <div class="fleet-list">
+
+
         {%for voiture in voitures %}
         <article>
             <div class="mini-car-title">
@@ -42,7 +45,7 @@
             </div>
             <div class="mini-car-price">
                 <p class="price-per-day">{{ voiture.dailyPrice}}€ / jour</p>
-                <p class="price-per-month">{{ voiture.annualPrice }}€ / mois</p>
+                <p class="price-per-month">€ {{ voiture.mensualPrice}}€/ mois</p>
             </div>
         </article>
         {% endfor %}

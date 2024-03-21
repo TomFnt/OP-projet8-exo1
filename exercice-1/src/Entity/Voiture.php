@@ -36,7 +36,10 @@ class Voiture
     private ?float $dailyPrice = null;
 
     #[ORM\Column]
-    private ?float $annualPrice = null;
+    private ?float $mensualPrice = null;
+
+    #[ORM\Column(length:255, nullable:true)]
+    private ?string $imagePath = null;
 
     public function getId(): ?int
     {
@@ -127,15 +130,31 @@ class Voiture
         return $this;
     }
 
-    public function getAnnualPrice(): ?float
+    public function getMensualPrice(): ?float
     {
-        return $this->annualPrice;
+        return $this->mensualPrice;
     }
 
-    public function setAnnualPrice(float $annualPrice): static
+    public function setMensualPrice(float $mensualPrice): static
     {
-        $this->annualPrice = $annualPrice;
+        $this->mensualPrice = $mensualPrice;
 
         return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getImagePath(): ?string
+    {
+        return $this->imagePath;
+    }
+
+    /**
+     * @param string|null $imagePath
+     */
+    public function setImagePath(?string $imagePath): void
+    {
+        $this->imagePath = $imagePath;
     }
 }

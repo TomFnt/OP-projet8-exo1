@@ -11,7 +11,7 @@
         {%for voiture in voitures %}
         <article>
             <div class="mini-car-title">
-                <a href="car.html">
+                <a href={{ path('voiture_index', {'id': voiture.id}) }}>
                     <h3>{{ voiture.name }}</h3>
                     <p>ou similaire | Saint-Étienne</p>
                 </a>

@@ -9,11 +9,17 @@
 <body>
 <header>
     <nav>
-        <a href="index.html"><img src="{{ asset('img/logo.png')}}" alt="Vehicloc" /></a>
+        <a href="{{ path('app_home') }}"><img src="{{ asset('img/logo.png')}}" alt="Vehicloc" /></a>
         <a href="add.html" class="btn-nav">Ajouter une voiture</a>
     </nav>
 </header>
-
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="flash-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
 
 {% block body %}
 
@@ -37,3 +43,5 @@
         </ul>
     </nav>
 </footer>
+</body>
+</html>
